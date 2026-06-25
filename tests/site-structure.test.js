@@ -192,7 +192,8 @@ assert(
     styles.includes(".news-list-simple .timeline-item p {\n  line-height: 1.32;") &&
     styles.includes(".timeline time {\n  color: var(--teal);") &&
     styles.includes(".news-section {\n  display: grid;\n  gap: 14px;\n  width: 100%;\n  padding-top: 0;") &&
-    styles.includes(".news-section h2 {\n  color: var(--ink);\n  font-size: 1.2rem;\n  font-weight: 900;\n  line-height: 1;\n  text-transform: uppercase;\n  white-space: nowrap;") &&
+    !styles.includes(".news-section h2 {\n  color: var(--ink);\n  font-size: 1.2rem;\n  font-weight: 900;\n  line-height: 1;\n  text-transform: uppercase;") &&
+    styles.includes(".news-section h2 {\n  color: var(--ink);\n  font-size: 1.2rem;\n  font-weight: 900;\n  line-height: 1;\n  white-space: nowrap;") &&
     styles.includes(".news-section .news-list-simple {\n  border-top: 0;") &&
     styles.includes(".news-section .timeline-item:last-child {\n  border-bottom: 0;"),
   "News renderer should support sectioned news and bold person names."
