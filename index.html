@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>RAIV Lab | Robotics and AI Vision Lab</title>
+    <meta
+      name="description"
+      content="Robotics and AI Vision Lab at Kumoh National Institute of Technology."
+    />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css?v=20260625-06-header-logo" />
+  </head>
+  <body data-page="home">
+    <header class="site-header" data-header data-render="site-header"></header>
+
+    <main>
+      <section class="home-recruiting" data-render="recruiting" aria-label="Recruiting"></section>
+
+      <section class="home-hero" aria-labelledby="hero-title">
+        <div class="section-inner">
+          <div class="hero-copy" data-render="home-hero"></div>
+        </div>
+      </section>
+
+      <section class="section home-research-latest">
+        <div class="section-inner">
+          <div class="home-section-rule home-research-panel">
+            <div class="section-heading spread" data-render="section-heading" data-section="latestResearch"></div>
+            <div
+              class="project-grid home-research-grid"
+              data-render="projects"
+              data-source="video-research"
+              data-limit="3"
+            ></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section home-news">
+        <div class="section-inner">
+          <div class="home-section-rule home-news-layout">
+            <div class="section-heading" data-render="section-heading" data-section="latestNews"></div>
+            <ol class="timeline news-list-simple" data-render="news" data-limit="5"></ol>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="data/site.js?v=20260625-07-refactor"></script>
+    <script src="scripts/core.js?v=20260625-07-refactor"></script>
+    <script src="scripts/media.js?v=20260625-07-refactor"></script>
+    <script src="scripts/render-global.js?v=20260625-07-refactor"></script>
+    <script src="scripts/render-projects.js?v=20260625-07-refactor"></script>
+    <script src="scripts/render-people.js?v=20260625-07-refactor"></script>
+    <script src="scripts/render-publications.js?v=20260625-07-refactor"></script>
+    <script src="scripts/render-news.js?v=20260625-07-refactor"></script>
+    <script src="scripts/render-pages.js?v=20260625-07-refactor"></script>
+    <script src="scripts/main.js?v=20260625-07-refactor"></script>
+  </body>
+</html>

@@ -1,0 +1,264 @@
+@media (max-width: 1040px) {
+  :root {
+    --page-gutter: 28px;
+    --page-gutter-pair: 56px;
+  }
+
+  .nav-shell {
+    padding: 14px var(--page-gutter);
+  }
+
+  .institution-bar {
+    padding: 7px var(--page-gutter);
+  }
+
+  .site-nav {
+    gap: 0;
+  }
+
+  .site-nav a {
+    padding: 0 8px;
+    font-size: 0.86rem;
+  }
+
+  .home-hero .section-inner,
+  .home-news-layout,
+  .split,
+  .join-area-grid,
+  .news-section,
+  .contact-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .theme-grid,
+  .project-grid,
+  .people-grid,
+  .album-grid,
+  .theme-grid-large {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .home-research-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: none;
+  }
+
+  .project-grid.home-research-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: none;
+  }
+
+  .student-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 820px) {
+  .nav-toggle {
+    display: block;
+  }
+
+  .site-nav {
+    position: absolute;
+    top: 100%;
+    right: 24px;
+    left: 24px;
+    display: none;
+    grid-template-columns: 1fr;
+    padding: 12px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: var(--surface);
+    box-shadow: var(--shadow);
+  }
+
+  .nav-open .site-nav {
+    display: grid;
+  }
+
+  .site-nav a {
+    justify-content: center;
+  }
+
+  .brand {
+    min-width: 0;
+  }
+
+  .brand img {
+    height: 38px;
+  }
+
+  .publication-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .filter-panel {
+    position: static;
+  }
+
+  .filter-list {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .student-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .member-detail-past {
+    white-space: normal;
+  }
+}
+
+@media (max-width: 680px) {
+  :root {
+    --page-gutter: 20px;
+    --page-gutter-pair: 40px;
+  }
+
+  h1 {
+    font-size: 3.1rem;
+    line-height: 1;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  .institution-bar {
+    display: grid;
+    gap: 4px;
+    padding: 8px var(--page-gutter);
+  }
+
+  .nav-shell {
+    padding: 12px var(--page-gutter);
+  }
+
+  .section {
+    padding: 62px 0;
+  }
+
+  .section-inner {
+    width: min(var(--max), calc(100% - var(--page-gutter-pair)));
+  }
+
+  .home-recruiting {
+    padding: 10px 0;
+  }
+
+  .recruiting-strip {
+    gap: 12px;
+  }
+
+  .recruiting-strip .recruiting-copy {
+    font-size: 0.84rem;
+    line-height: 1.35;
+  }
+
+  .recruiting-strip .button {
+    min-height: 32px;
+    padding: 0 10px;
+    font-size: 0.82rem;
+  }
+
+  .home-hero {
+    min-height: auto;
+    padding: 46px 0 52px;
+  }
+
+  .home-hero .section-inner {
+    gap: 36px;
+  }
+
+  .fact-row,
+  .theme-grid,
+    .project-grid,
+    .album-grid,
+    .people-grid,
+    .theme-grid-large,
+    .recruiting-panel,
+    .member-profile,
+  .faculty-panel,
+  .publication-item,
+  .timeline-item {
+    grid-template-columns: 1fr;
+  }
+
+  .project-grid.home-research-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-info-panel .contact-list {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-item {
+    grid-template-columns: 1fr;
+    gap: 6px;
+    padding: 12px 0;
+  }
+
+  .section-heading.spread {
+    display: grid;
+    align-items: start;
+  }
+
+  .hero-gridline {
+    grid-template-columns: 1fr;
+  }
+
+  .page-title-section {
+    padding: 28px 0;
+  }
+
+  .page-title-section h1 {
+    font-size: 2.4rem;
+  }
+
+  .avatar-large {
+    width: 96px;
+    height: 96px;
+    font-size: 1.5rem;
+  }
+
+  .member-profile {
+    gap: 24px;
+  }
+
+  .member-photo {
+    max-width: 320px;
+  }
+
+  .faculty-panel {
+    padding: 24px;
+  }
+
+  .member-profile-body {
+    padding-top: 0;
+  }
+
+  .faculty-panel .member-profile-body {
+    padding: 0;
+  }
+
+  .member-detail-list {
+    gap: 12px;
+    margin-top: 24px;
+    font-size: 1rem;
+  }
+
+  .member-icon-links {
+    gap: 12px;
+    margin-top: 28px;
+  }
+
+  .filter-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  .student-grid {
+    grid-template-columns: 1fr;
+  }
+}
