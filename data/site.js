@@ -382,7 +382,7 @@ window.raivData = {
   people: [
     {
       name: "Chan-Hyeok Park",
-      role: "Integrated BS-MS Program",
+      role: "Undergraduate Student",
       email: "sun5408@kumoh.ac.kr",
       imageSrc: "assets/사진/박찬혁.jpg",
       imageAlt: "Portrait of Chan-Hyeok Park",
