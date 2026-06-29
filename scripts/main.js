@@ -3,6 +3,7 @@
   const {
     renderHeader,
     renderPageTitles,
+    renderPageActions,
     renderHomeHero,
     renderSectionHeadings,
     renderFacts,
@@ -47,6 +48,7 @@
 
   renderHeader();
   renderPageTitles();
+  renderPageActions();
   renderHomeHero();
   renderSectionHeadings();
   renderFacts();

@@ -52,6 +52,33 @@
     });
   };
 
+  const renderPageActions = () => {
+    renderEach('[data-render="page-actions"]', (target) => {
+      const page = target.dataset.page || document.body.dataset.page;
+      const actions = data.pages?.[page]?.actions || [];
+      if (!actions.length) {
+        target.hidden = true;
+        return;
+      }
+
+      actions.forEach((item) => {
+        if (!item?.label || !item.href) return;
+        const action = link("", item.href, "page-action-link");
+        action.setAttribute("aria-label", item.label);
+        action.title = item.label;
+        if (item.iconSrc) {
+          const icon = make("img");
+          icon.src = item.iconSrc;
+          icon.alt = "";
+          icon.setAttribute("aria-hidden", "true");
+          action.append(icon);
+        }
+        action.append(make("span", "sr-only", item.label));
+        target.append(action);
+      });
+    });
+  };
+
   const renderHomeHero = () => {
     renderEach('[data-render="home-hero"]', (target) => {
       const hero = data.pages?.home?.hero;
@@ -115,6 +142,7 @@
   Object.assign(site, {
     renderHeader,
     renderPageTitles,
+    renderPageActions,
     renderHomeHero,
     renderSectionHeadings,
     renderFacts,

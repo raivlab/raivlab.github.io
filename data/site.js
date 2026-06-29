@@ -59,7 +59,13 @@ window.raivData = {
         },
       },
     },
-    projects: { title: "Research" },
+    projects: {
+      title: "Research",
+      actions: [
+        { label: "GitHub", href: "https://github.com/raivlab", iconSrc: "assets/icon/github_b.png" },
+        { label: "YouTube", href: "https://www.youtube.com/@raivlab", iconSrc: "assets/icon/youtube.png" },
+      ],
+    },
     people: { title: "Current Members" },
     publications: { title: "Publications" },
     album: { title: "Gallery" },

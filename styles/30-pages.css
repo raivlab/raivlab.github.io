@@ -10,6 +10,51 @@
   line-height: 1.04;
 }
 
+.page-title-layout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.page-title-layout h1 {
+  flex: 1 1 260px;
+}
+
+.page-actions {
+  display: flex;
+  flex: 0 0 auto;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
+.page-action-link {
+  display: inline-flex;
+  width: 52px;
+  height: 52px;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--ink);
+  line-height: 1;
+  outline-offset: 4px;
+}
+
+.page-action-link:hover {
+  background: var(--surface-2);
+}
+
+.page-action-link img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+
 .album-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));

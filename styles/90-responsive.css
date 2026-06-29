@@ -215,6 +215,15 @@
     font-size: 2.4rem;
   }
 
+  .page-title-layout {
+    display: grid;
+    gap: 16px;
+  }
+
+  .page-actions {
+    justify-content: flex-start;
+  }
+
   .avatar-large {
     width: 96px;
     height: 96px;

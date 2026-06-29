@@ -415,6 +415,26 @@ assert(
   projects.includes('data-source="all-research"'),
   "Projects page should request the full research catalog."
 );
+assert(
+  projects.includes('data-render="page-actions"') &&
+    siteData.pages.projects.actions.length === 2 &&
+    JSON.stringify(siteData.pages.projects.actions) ===
+      JSON.stringify([
+        { label: "GitHub", href: "https://github.com/raivlab", iconSrc: "assets/icon/github_b.png" },
+        { label: "YouTube", href: "https://www.youtube.com/@raivlab", iconSrc: "assets/icon/youtube.png" },
+      ]) &&
+    script.includes("renderPageActions") &&
+    script.includes('target.dataset.page || document.body.dataset.page') &&
+    script.includes('const action = link("", item.href, "page-action-link")') &&
+    script.includes('action.setAttribute("aria-label", item.label)') &&
+    script.includes('make("span", "sr-only", item.label)') &&
+    !script.includes('link(item.label, item.href, "page-action-link")') &&
+    styles.includes(".page-title-layout") &&
+    styles.includes(".page-actions") &&
+    /\.page-action-link \{[\s\S]*?width: 52px;[\s\S]*?height: 52px;[\s\S]*?padding: 0;[\s\S]*?border: 0;[\s\S]*?background: transparent;/.test(styles) &&
+    /\.page-action-link img \{[\s\S]*?width: 30px;[\s\S]*?height: 30px;/.test(styles),
+  "Research page should render larger borderless icon-only GitHub and YouTube buttons from site.js."
+);
 const researchPageTitles = [
   "Kitchen Robotic Manipulation utilizing Foundation Models",
   "TRAN-D: 2D Gaussian Splatting-based Sparse-view Transparent Object Depth Reconstruction via Physics Simulation for Scene Update",
