@@ -113,6 +113,12 @@ window.raivData = {
     ],
   },
   albums: [
+      {
+      title: "RAIV-RML 연구 교류 워크샵",
+      date: "2026.07.09",
+      imageSrc: "assets/사진/앨범/joint_workshop_1.jpg",
+      imageAlt: "RAIV-RML 연구 교류 워크샵",
+    },
     {
       title: "2026년 한국로봇종합학술대회 참석",
       date: "2026.02.04-2026.02.06",
