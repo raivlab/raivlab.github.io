@@ -113,17 +113,23 @@ window.raivData = {
     ],
   },
   albums: [
-      {
+    {
       title: "RAIV-RML 연구 교류 워크샵",
       date: "2026.07.09",
       imageSrc: "assets/사진/앨범/joint_workshop_1.jpg",
       imageAlt: "RAIV-RML 연구 교류 워크샵",
+    },    
+    {
+      title: "2026년 제어로봇시스템학회 학술대회",
+      date: "2026.07.03",
+      imageSrc: "assets/사진/앨범/icros2026.jpg",
+      imageAlt: "2026년 제어로봇시스템학회 학술대회",
     },
     {
-      title: "2026년 한국로봇종합학술대회 참석",
+      title: "2026년 한국로봇종합학술대회",
       date: "2026.02.04-2026.02.06",
       imageSrc: "assets/사진/앨범/KROC2026.jpg",
-      imageAlt: "2026년 한국로봇종합학술대회 참석",
+      imageAlt: "2026년 한국로봇종합학술대회",
     },
     {
       title: "2026년 구미고등학교 프로그래밍 수업",
@@ -132,10 +138,10 @@ window.raivData = {
       imageAlt: "2026년 구미고등학교 프로그래밍 수업",
     },
     {
-      title: "2025년 전자공학회 추계학술대회 참석",
+      title: "2025년 전자공학회 추계학술대회",
       date: "2025.11.28",
       imageSrc: "assets/사진/앨범/전자공학회_추계학술대회_2025.jpg",
-      imageAlt: "2025년 전자공학회 추계학술대회 참석",
+      imageAlt: "2025년 전자공학회 추계학술대회",
     },
   ],
   links: [
