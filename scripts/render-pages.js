@@ -18,7 +18,7 @@
     return slides;
   };
 
-  const albumSlideIntervalMs = 4000;
+  const albumSlideIntervalMs = 2000;
 
   const renderAlbumSlider = (album) => {
     const slides = albumImages(album);
