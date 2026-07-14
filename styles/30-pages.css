@@ -68,12 +68,59 @@
   background: #ffffff;
 }
 
-.album-card img {
+.album-slider {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-bottom: 1px solid var(--line);
+  background: #ffffff;
+}
+
+.album-slider img {
   display: block;
   width: 100%;
-  aspect-ratio: 4 / 3;
+  height: 100%;
   object-fit: contain;
   background: #ffffff;
+}
+
+.album-slide-dots {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  left: 12px;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
+}
+
+.album-slide-dot {
+  display: grid;
+  width: 18px;
+  height: 18px;
+  place-items: center;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.album-slide-dot::before {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.76);
+  content: "";
+}
+
+.album-slide-dot:hover::before,
+.album-slide-dot:focus-visible::before {
+  background: #ffffff;
+}
+
+.album-slide-dot.active::before {
+  background: var(--teal-dark);
 }
 
 .album-card-body {

@@ -2,19 +2,104 @@
   const site = window.raivSite;
   const { data, make, renderEach, link } = site;
 
+  const albumImages = (album) => {
+    const imageItems = Array.isArray(album.images) ? album.images : [];
+    const slides = imageItems
+      .map((item) => {
+        if (typeof item === "string") return { src: item, alt: album.imageAlt || album.title };
+        return { src: item?.src, alt: item?.alt || album.imageAlt || album.title };
+      })
+      .filter((item) => item.src);
+
+    if (!slides.length && album.imageSrc) {
+      slides.push({ src: album.imageSrc, alt: album.imageAlt || album.title });
+    }
+
+    return slides;
+  };
+
+  const albumSlideIntervalMs = 4000;
+
+  const renderAlbumSlider = (album) => {
+    const slides = albumImages(album);
+    const slider = make("div", "album-slider");
+    slider.setAttribute("aria-label", `${album.title} photos`);
+
+    const image = make("img");
+    image.loading = "lazy";
+    image.decoding = "async";
+    slider.append(image);
+
+    const status = make("span", "album-slide-status sr-only");
+    status.setAttribute("aria-live", "polite");
+    slider.append(status);
+
+    let currentIndex = 0;
+    let autoplayId = null;
+    const dots = [];
+
+    const updateSlide = (index) => {
+      if (!slides.length) return;
+      currentIndex = (index + slides.length) % slides.length;
+      const slide = slides[currentIndex];
+      image.src = slide.src;
+      image.alt = slide.alt || album.title;
+      status.textContent = `${currentIndex + 1} / ${slides.length}`;
+      dots.forEach((dot, dotIndex) => {
+        const active = dotIndex === currentIndex;
+        dot.classList.toggle("active", active);
+        dot.setAttribute("aria-current", active ? "true" : "false");
+      });
+    };
+
+    const stopAutoplay = () => {
+      if (autoplayId) window.clearInterval(autoplayId);
+      autoplayId = null;
+    };
+
+    const startAutoplay = () => {
+      if (slides.length <= 1) return;
+      stopAutoplay();
+      autoplayId = window.setInterval(() => updateSlide(currentIndex + 1), albumSlideIntervalMs);
+    };
+
+    if (slides.length > 1) {
+      const dotList = make("div", "album-slide-dots");
+      dotList.setAttribute("role", "tablist");
+      dotList.setAttribute("aria-label", `${album.title} photo selector`);
+
+      slides.forEach((slide, index) => {
+        const dot = make("button", "album-slide-dot");
+        dot.type = "button";
+        dot.setAttribute("role", "tab");
+        dot.setAttribute("aria-label", `Show photo ${index + 1} of ${slides.length}`);
+        dot.addEventListener("click", () => {
+          updateSlide(index);
+          startAutoplay();
+        });
+        dots.push(dot);
+        dotList.append(dot);
+      });
+
+      slider.append(dotList);
+      slider.addEventListener("mouseenter", stopAutoplay);
+      slider.addEventListener("mouseleave", startAutoplay);
+      slider.addEventListener("focusin", stopAutoplay);
+      slider.addEventListener("focusout", startAutoplay);
+    }
+
+    updateSlide(0);
+    startAutoplay();
+    return slider;
+  };
+
   const renderAlbums = () => {
     renderEach('[data-render="albums"]', (target) => {
       (data.albums || []).forEach((album) => {
         const card = make("article", "album-card");
-        const image = make("img");
-        image.src = album.imageSrc;
-        image.alt = album.imageAlt || album.title;
-        image.loading = "lazy";
-        image.decoding = "async";
-
         const body = make("div", "album-card-body");
         body.append(make("h2", null, album.title), make("p", "album-date", album.date));
-        card.append(image, body);
+        card.append(renderAlbumSlider(album), body);
         target.append(card);
       });
     });
@@ -216,6 +301,8 @@
   };
 
   Object.assign(site, {
+    albumImages,
+    renderAlbumSlider,
     renderAlbums,
     renderCalendar,
     renderRecruiting,

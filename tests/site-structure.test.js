@@ -4,7 +4,7 @@ const path = require("path");
 const vm = require("vm");
 
 const root = path.resolve(__dirname, "..");
-const read = (file) => fs.readFileSync(path.join(root, file), "utf8");
+const read = (file) => fs.readFileSync(path.join(root, file), "utf8").replace(/\r\n?/g, "\n");
 
 const index = read("index.html");
 const projects = read("projects.html");
@@ -507,9 +507,9 @@ const youtubeByTitle = new Map(
   );
 });
 [
-  ["Imaging radar and LiDAR Image Translation for 3-DOF Extrinsic Calibration", "assets/%EC%82%AC%EC%A7%84/isr.jpg"],
-  ["TRansPose: Large-Scale Multispectral Dataset for Transparent Object", "assets/%EC%82%AC%EC%A7%84/transpose.jpg"],
-  ["STheReO: Stereo Thermal Dataset for Research in Odometry and Mapping", "assets/%EC%82%AC%EC%A7%84/sthereo.jpg"],
+  ["Imaging radar and LiDAR Image Translation for 3-DOF Extrinsic Calibration", "assets/사진/연구사진/isr.jpg"],
+  ["TRansPose: Large-Scale Multispectral Dataset for Transparent Object", "assets/사진/연구사진/transpose.jpg"],
+  ["STheReO: Stereo Thermal Dataset for Research in Odometry and Mapping", "assets/사진/연구사진/sthereo.jpg"],
 ].forEach(([title, imageSrc]) => {
   const project = siteData.projects.find((item) => item.title === title);
   assert.strictEqual(project?.imageSrc, imageSrc, `${title} should use its provided local teaser image.`);
@@ -1026,37 +1026,91 @@ assert(
     album.includes('class="album-grid" data-render="albums"') &&
     (album.match(/class="album-card"/g) || []).length === 0 &&
     siteData.pages.album.title === "Gallery" &&
-    siteData.albums.length === 3 &&
-    script.includes("renderAlbums"),
+    siteData.albums.length === 5 &&
+    script.includes("renderAlbums") &&
+    script.includes("albumImages"),
   "Album page should render its Gallery title and cards from site.js."
 );
-assert(
-  siteData.albums[0].date === "2026.02.04-2026.02.06" &&
-    siteData.albums[1].date === "2026.01.08-2026.01.27" &&
-    siteData.albums[2].date === "2025.11.28",
+assert.deepStrictEqual(
+  JSON.parse(JSON.stringify(siteData.albums.map((item) => item.date))),
+  ["2026.07.09", "2026.07.03", "2026.02.04-2026.02.06", "2026.01.08-2026.01.27", "2025.11.28"],
   "Album data should be ordered newest first from left to right."
 );
 [
-  ["assets/사진/앨범/전자공학회_추계학술대회_2025.jpg", "2025년 전자공학회 추계학술대회 참석", "2025.11.28"],
-  ["assets/사진/앨범/구미고.jpg", "2026년 구미고등학교 프로그래밍 수업", "2026.01.08-2026.01.27"],
-  ["assets/사진/앨범/KROC2026.jpg", "2026년 한국로봇종합학술대회 참석", "2026.02.04-2026.02.06"],
-].forEach(([image, title, date]) => {
+  ["assets/사진/앨범/joint_workshop_1/joint_workshop_1.jpg", "2026.07.09"],
+  ["assets/사진/앨범/icros2026/icros2026_1.jpg", "2026.07.03"],
+  ["assets/사진/앨범/KROC2026/KROC2026.jpg", "2026.02.04-2026.02.06"],
+  ["assets/사진/앨범/구미고/구미고.jpg", "2026.01.08-2026.01.27"],
+  ["assets/사진/앨범/전자공학회_추계학술대회2025/전자공학회_추계학술대회_2025.jpg", "2025.11.28"],
+].forEach(([image, date]) => {
   const item = siteData.albums.find((albumItem) => albumItem.date === date);
   assert.strictEqual(item?.imageSrc, image, `Album data should use ${image}.`);
-  assert.strictEqual(item?.title, title, `Album data should include ${title}.`);
+  assert(fs.existsSync(path.join(root, image)), `${image} should exist for the Album card.`);
+});
+assert.deepStrictEqual(
+  JSON.parse(JSON.stringify(siteData.albums.slice(0, 2).map((item) => item.images.map((image) => image.src)))),
+  [
+    [
+      "assets/사진/앨범/joint_workshop_1/joint_workshop_1.jpg",
+      "assets/사진/앨범/joint_workshop_1/joint_workshop_2.jpg",
+      "assets/사진/앨범/joint_workshop_1/joint_workshop_3.jpg",
+      "assets/사진/앨범/joint_workshop_1/joint_workshop_4.jpg",
+    ],
+    [
+      "assets/사진/앨범/icros2026/icros2026_1.jpg",
+      "assets/사진/앨범/icros2026/icros2026_2.jpg",
+      "assets/사진/앨범/icros2026/icros2026_3.jpg",
+      "assets/사진/앨범/icros2026/icros2026_4.jpg",
+    ],
+  ],
+  "First two Album cards should group multiple photos into one slot."
+);
+siteData.albums.slice(0, 2).forEach((item) => {
+  item.images.forEach((image) => {
+    assert(fs.existsSync(path.join(root, image.src)), `${image.src} should exist for the Album slider.`);
+  });
 });
 assert(
+  script.includes("album.images") &&
+    script.includes("album.imageSrc") &&
+    script.includes('"album-slider"') &&
+    script.includes('"album-slide-dots"') &&
+    script.includes('"album-slide-dot"') &&
+    script.includes("albumSlideIntervalMs") &&
+    script.includes("setInterval") &&
+    script.includes("clearInterval") &&
+    script.includes("updateSlide") &&
+    script.includes("currentIndex") &&
+    script.includes("slides.length > 1") &&
+    !script.includes('"album-slide-button album-slide-prev"') &&
+    !script.includes('"album-slide-button album-slide-next"'),
+  "Album renderer should support auto-playing dot-controlled sliders while preserving imageSrc fallback."
+);
+assert(
   styles.includes(".album-grid {\n  display: grid;\n  grid-template-columns: repeat(3, minmax(0, 1fr));") &&
-    /\.album-card img \{\n  display: block;\n  width: 100%;\n  aspect-ratio: 4 \/ 3;\n  object-fit: contain;\n  background: #ffffff;\n\}/.test(styles) &&
-    styles.includes(".album-date"),
-  "Album page should use a three-card image grid with uncropped 4:3 photos and date styling."
+    styles.includes(".album-slider {\n  position: relative;\n  aspect-ratio: 4 / 3;") &&
+    styles.includes(".album-slider img") &&
+    styles.includes(".album-slide-dots") &&
+    styles.includes(".album-slide-dot") &&
+    styles.includes(".album-slide-dot::before") &&
+    styles.includes("background: rgba(255, 255, 255, 0.76);") &&
+    styles.includes(".album-slide-dot.active::before") &&
+    styles.includes("background: var(--teal-dark);") &&
+    !styles.includes(".album-slide-dot::before {\n  width: 8px;\n  height: 8px;\n  border-radius: 999px;\n  background: rgba(255, 255, 255, 0.76);\n  box-shadow") &&
+    !styles.includes("0 0 0 1px rgba(8, 40, 74") &&
+    !styles.includes("0 0 0 2px rgba(255, 255, 255") &&
+    !styles.includes(".album-slide-button") &&
+    !styles.includes(".album-slide-prev") &&
+    !styles.includes(".album-slide-next") &&
+    styles.includes(".album-date") &&
+    !styles.includes(".album-card img {\n  display: block;\n  width: 100%;\n  aspect-ratio: 4 / 3;"),
+  "Album page should use a stable 4:3 auto slider frame with centered dot navigation."
 );
 assert(
   /@media \(max-width: 1040px\) \{[\s\S]*\.album-grid[\s\S]*grid-template-columns: repeat\(2, minmax\(0, 1fr\)\);/.test(styles) &&
     /@media \(max-width: 680px\) \{[\s\S]*\.album-grid[\s\S]*grid-template-columns: 1fr;/.test(styles),
   "Album grid should collapse to two columns on tablet and one column on mobile."
 );
-
 assert(
   !fs.existsSync(path.join(root, "research.html")),
   "research.html should be removed."
