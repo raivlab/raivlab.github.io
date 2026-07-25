@@ -425,13 +425,6 @@ window.raivData = {
       imageAlt: "Portrait of Tae-Jun Kim",
     },
     {
-      name: "Dong-Sik Yoon",
-      role: "Undergraduate Student",
-      email: "yoon00@kumoh.ac.kr",
-      imageSrc: "assets/사진/멤버별사진/윤동식.jpg",
-      imageAlt: "Portrait of Dong-Sik Yoon",
-    },
-    {
       name: "Chanhyo Kim",
       role: "Undergraduate Student",
       email: "wktlr1239@kumoh.ac.kr",
@@ -643,12 +636,6 @@ window.raivData = {
           sortDate: "2025-12",
           title: "Jeongwook Park joined @RAIV Lab",
           names: ["Jeongwook Park"],
-        },
-        {
-          date: "Dec 2025",
-          sortDate: "2025-12",
-          title: "Dong-Sik Yoon joined @RAIV Lab",
-          names: ["Dong-Sik Yoon"],
         },
         {
           date: "Nov 2025",
