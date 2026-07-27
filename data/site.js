@@ -445,13 +445,20 @@ window.raivData = {
       imageSrc: "assets/사진/멤버별사진/박정욱.jpg",
       imageAlt: "Portrait of Jeongwook Park",
     },
-        {
+    {
       name: "Gyeongmun Lee",
       role: "Undergraduate Student",
       email: "20210772@kumoh.ac.kr",
       imageSrc: "assets/사진/멤버별사진/이경문.jpg",
       imageAlt: "Portrait of Gyeongmun Lee",
     },
+    {
+      name: "Jisung Lee",
+      role: "Undergraduate Student",
+      email: "waydt@kumoh.ac.kr",
+      imageSrc: "assets/사진/멤버별사진/이지성.jpg",
+      imageAlt: "Portrait of Jisung Lee",
+    },    
   ],
   publications: [
     {
