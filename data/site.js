@@ -627,6 +627,12 @@ window.raivData = {
       title: "New Members",
       items: [
         {
+          date: "Jul 2026",
+          sortDate: "2026-07",
+          title: "Jisung Lee joined @RAIV Lab",
+          names: ["Jisung Lee"],
+        },        
+        {
           date: "Jun 2026",
           sortDate: "2026-06",
           title: "Gyeongmun Lee joined @RAIV Lab",
