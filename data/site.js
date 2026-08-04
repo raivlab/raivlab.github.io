@@ -172,10 +172,10 @@ window.raivData = {
   ],
   projects: [
     {
-      venue: "Under Review",
+      venue: "ISR 2026",
       title: "Kitchen Robotic Manipulation utilizing Foundation Models",
       authors: "Myung-Hwan Jeon, Sankalp Yamsani, and Joohyung Kim",
-      summary: "Under Review.",
+      summary: "ISR 2026.",
       href: "https://raivlab.github.io/FM_kitchen/",
       linkLabel: "Project",
       youtubeHref: "https://www.youtube.com/watch?v=tYHywdV1Nvs",
@@ -462,6 +462,15 @@ window.raivData = {
   ],
   publications: [
     {
+      year: 2026,
+      title:
+        "Kitchen Robotic Manipulation utilizing Foundation Models",
+      authors:
+        "Myung-Hwan Jeon, Sankalp Yamsani, and Joohyung Kim",
+      venue: "Intelligent Service Robotics (ISR), 2026",
+      href: "https://raivlab.github.io/publications.html",
+    },    
+    {
       year: 2025,
       title:
         "TRAN-D: 2D Gaussian Splatting-based Sparse-view Transparent Object Depth Reconstruction via Physics Simulation for Scene Update",
@@ -601,6 +610,11 @@ window.raivData = {
     {
       title: "Papers",
       items: [
+        {
+          date: "Aug 2026",
+          sortDate: "2026-08",
+          title: "Kitchen Manipulation accepted @ISR",
+        },
         {
           date: "Jul 2025",
           sortDate: "2025-07",
