@@ -179,7 +179,10 @@ window.raivData = {
       href: "https://raivlab.github.io/FM_kitchen/",
       linkLabel: "Project",
       youtubeHref: "https://www.youtube.com/watch?v=tYHywdV1Nvs",
-      links: [{ label: "Project", href: "https://raivlab.github.io/FM_kitchen/" }],
+      links: [
+        { label: "Project", href: "https://raivlab.github.io/FM_kitchen/" },
+        { label: "Paper", href: "https://arxiv.org/abs/2608.04042" },
+      ],
     },
     {
       venue: "ICCV 2025",
@@ -468,7 +471,7 @@ window.raivData = {
       authors:
         "Myung-Hwan Jeon, Sankalp Yamsani, and Joohyung Kim",
       venue: "Intelligent Service Robotics (ISR), 2026",
-      href: "https://raivlab.github.io/publications.html",
+      href: "https://arxiv.org/abs/2608.04042",
     },    
     {
       year: 2025,
