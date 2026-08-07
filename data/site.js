@@ -175,7 +175,7 @@ window.raivData = {
       venue: "ISR 2026",
       title: "Kitchen Robotic Manipulation utilizing Foundation Models",
       authors: "Myung-Hwan Jeon, Sankalp Yamsani, and Joohyung Kim",
-      summary: "ISR 2026.",
+      summary: "Intelligent Service Robotics 2026.",
       href: "https://raivlab.github.io/FM_kitchen/",
       linkLabel: "Project",
       youtubeHref: "https://www.youtube.com/watch?v=tYHywdV1Nvs",
