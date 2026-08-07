@@ -1,4 +1,4 @@
-# RAIV Lab Website
+# RAIV-Lab Website
 
 Static GitHub Pages site for Robotics and AI Vision Lab at Kumoh National Institute of Technology.
 
