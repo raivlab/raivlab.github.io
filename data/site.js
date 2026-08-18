@@ -178,7 +178,7 @@ window.raivData = {
       summary: "Intelligent Service Robotics 2026.",
       href: "https://raivlab.github.io/FM_kitchen/",
       linkLabel: "Project",
-      youtubeHref: "https://www.youtube.com/watch?v=tYHywdV1Nvs",
+      youtubeHref: "https://www.youtube.com/watch?v=yF6eZ7EyC0Q",
       links: [
         { label: "Project", href: "https://raivlab.github.io/FM_kitchen/" },
         { label: "Paper", href: "https://arxiv.org/abs/2608.04042" },
