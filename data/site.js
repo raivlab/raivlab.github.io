@@ -622,14 +622,24 @@ window.raivData = {
       title: "Projects",
       items: [
         {
+          date: "Aug 2026",
+          sortDate: "2026-08",
+          title: "RAIV Lab won a big grant @KEIT-Robot Industry Technology Development Program (Robot Foundation Model)",
+        },
+        {
+          date: "Aug 2026",
+          sortDate: "2026-08",
+          title: "RAIV Lab won a big grant @KEIT-Robot Industry Technology Development Program (Hot-Swap Batteries for Humanoid)",
+        },
+        {
           date: "May 2026",
           sortDate: "2026-05",
-          title: "RAIV Lab won a grant (KIT-RISE)",
+          title: "RAIV Lab won a grant @KIT-RISE",
         },
         {
           date: "Dec 2025",
           sortDate: "2025-12",
-          title: "RAIV Lab won a grant (KIT-RISE)",
+          title: "RAIV Lab won a grant @KIT-RISE",
         },
       ],
     },
