@@ -421,13 +421,6 @@ window.raivData = {
       imageAlt: "Portrait of Chan-Hyeok Park",
     },
     {
-      name: "Tae-Jun Kim",
-      role: "Undergraduate Student",
-      email: "20210338@kumoh.ac.kr",
-      imageSrc: "assets/사진/멤버별사진/김태준.jpg",
-      imageAlt: "Portrait of Tae-Jun Kim",
-    },
-    {
       name: "Chanhyo Kim",
       role: "Undergraduate Student",
       email: "wktlr1239@kumoh.ac.kr",
@@ -666,12 +659,6 @@ window.raivData = {
           sortDate: "2025-12",
           title: "Jeongwook Park joined @RAIV Lab",
           names: ["Jeongwook Park"],
-        },
-        {
-          date: "Nov 2025",
-          sortDate: "2025-11",
-          title: "Tae-Jun Kim joined @RAIV Lab",
-          names: ["Tae-Jun Kim"],
         },
         {
           date: "Nov 2025",
