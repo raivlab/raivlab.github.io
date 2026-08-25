@@ -624,6 +624,11 @@ window.raivData = {
         {
           date: "Aug 2026",
           sortDate: "2026-08",
+          title: "RAIV Lab won a big grant @MSIT-Core Research Grants (General Research B)",
+        },
+        {
+          date: "Aug 2026",
+          sortDate: "2026-08",
           title: "RAIV Lab won a big grant @KEIT-Robot Industry Technology Development Program (Robot Foundation Model)",
         },
         {
