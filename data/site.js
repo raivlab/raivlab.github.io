@@ -747,14 +747,6 @@ window.raivData = {
         ],
       },
       {
-        title: "What You Will Gain",
-        items: [
-          "Hands-on experience in robot vision, embodied AI, and robot manipulation research",
-          "Experience with 3D perception, multimodal sensing, foundation models, and various robotic systems",
-          "Opportunities to participate in research projects, robot experiments, and paper writing",
-        ],          
-      },
-      {
         title: "Open Positions",
         layout: "positions",
         items: [
