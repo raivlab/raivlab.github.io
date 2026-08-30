@@ -114,15 +114,32 @@ window.raivData = {
   },
   albums: [
     {
-      title: "RAIV-RML 연구 교류 워크샵",
+      title: "제 2회 RAIV-RML 연구 교류 워크샵",
+      date: "2026.08.27",
+      imageSrc: "assets/사진/앨범/joint_workshop_2/초청세미나1.jpg",
+      imageAlt: "제 2회 RAIV-RML 연구 교류 워크샵",
+      images: [
+        { src: "assets/사진/앨범/joint_workshop_2/초청세미나1.jpg", alt: "제 2회 RAIV-RML 연구 교류 워크샵 1" },
+        { src: "assets/사진/앨범/joint_workshop_2/초청세미나2.jpg", alt: "제 2회 RAIV-RML 연구 교류 워크샵 2" },
+        { src: "assets/사진/앨범/joint_workshop_2/초청세미나3.jpg", alt: "제 2회 RAIV-RML 연구 교류 워크샵 3" },        
+      ],
+    },    
+    {
+      title: "2026 ROS기반 자율주행 교육과정 경진대회 수상",
+      date: "2026.08.14",
+      imageSrc: "assets/사진/앨범/수상/김찬효_이경문_상장.jpg",
+      imageAlt: "2026 ROS기반 자율주행 교육과정 경진대회 수상",
+    },      
+    {
+      title: "제 1회 RAIV-RML 연구 교류 워크샵",
       date: "2026.07.09",
       imageSrc: "assets/사진/앨범/joint_workshop_1/joint_workshop_1.jpg",
-      imageAlt: "RAIV-RML 연구 교류 워크샵",
+      imageAlt: "제 1회 RAIV-RML 연구 교류 워크샵",
       images: [
-        { src: "assets/사진/앨범/joint_workshop_1/joint_workshop_1.jpg", alt: "RAIV-RML 연구 교류 워크샵 1" },
-        { src: "assets/사진/앨범/joint_workshop_1/joint_workshop_2.jpg", alt: "RAIV-RML 연구 교류 워크샵 2" },
-        { src: "assets/사진/앨범/joint_workshop_1/joint_workshop_3.jpg", alt: "RAIV-RML 연구 교류 워크샵 3" },
-        { src: "assets/사진/앨범/joint_workshop_1/joint_workshop_4.jpg", alt: "RAIV-RML 연구 교류 워크샵 4" },
+        { src: "assets/사진/앨범/joint_workshop_1/joint_workshop_1.jpg", alt: "제 1회 RAIV-RML 연구 교류 워크샵 1" },
+        { src: "assets/사진/앨범/joint_workshop_1/joint_workshop_2.jpg", alt: "제 1회 RAIV-RML 연구 교류 워크샵 2" },
+        { src: "assets/사진/앨범/joint_workshop_1/joint_workshop_3.jpg", alt: "제 1회 RAIV-RML 연구 교류 워크샵 3" },
+        { src: "assets/사진/앨범/joint_workshop_1/joint_workshop_4.jpg", alt: "제 1회 RAIV-RML 연구 교류 워크샵 4" },
       ],
     },
     {
@@ -645,6 +662,16 @@ window.raivData = {
           date: "Dec 2025",
           sortDate: "2025-12",
           title: "RAIV Lab won a grant @KIT-RISE",
+        },
+      ],
+    },
+        {
+      title: "Award",
+      items: [
+        {
+          date: "Aug 2026",
+          sortDate: "2026-08",
+          title: "우리 연구실의 김찬효, 이경문 학생이 2026 ROS기반 자율주행 교육과정 경진대회에서 각각 금상과 은상을 수상하였습니다. 축하합니다!",
         },
       ],
     },
