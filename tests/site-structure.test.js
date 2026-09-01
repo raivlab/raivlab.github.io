@@ -7,6 +7,7 @@ const root = path.resolve(__dirname, "..");
 const read = (file) => fs.readFileSync(path.join(root, file), "utf8").replace(/\r\n?/g, "\n");
 
 const index = read("index.html");
+const research = read("research.html");
 const projects = read("projects.html");
 const people = read("people.html");
 const publications = read("publications.html");
@@ -42,6 +43,7 @@ const siteData = dataSandbox.window.raivData;
 const htmlDocuments = [
   ["index.html", index],
   ["people.html", people],
+  ["research.html", research],
   ["projects.html", projects],
   ["publications.html", publications],
   ["news.html", news],
@@ -66,7 +68,7 @@ scriptFiles.forEach((file) => {
 });
 styleFiles.forEach((file) => {
   assert(fs.existsSync(path.join(root, file)), `${file} should exist as part of the split CSS bundle.`);
-  assert(read("styles.css").includes(`@import url("${file}")`), `styles.css should import ${file}.`);
+  assert(read("styles.css").includes(`@import url("${file}?v=`), `styles.css should version and import ${file}.`);
 });
 htmlDocuments.forEach(([file, html]) => {
   assert(!html.includes('src="script.js'), `${file} should load the split renderer files directly.`);
@@ -208,7 +210,7 @@ assert(
     index.includes('data-render="section-heading" data-section="latestResearch"') &&
     siteData.pages.home.sections.latestResearch.title === "Latest Research" &&
     siteData.pages.home.sections.latestResearch.linkLabel === "All research" &&
-    siteData.pages.home.sections.latestResearch.href === "projects.html" &&
+    siteData.pages.home.sections.latestResearch.href === "research.html" &&
     index.includes('class="project-grid home-research-grid"') &&
     index.includes('data-render="projects"') &&
     index.includes('data-source="video-research"') &&
@@ -401,6 +403,7 @@ assert(
 
 const pages = {
   "index.html": index,
+  "research.html": research,
   "projects.html": projects,
   "people.html": people,
   "publications.html": publications,
@@ -412,13 +415,13 @@ const pages = {
 };
 
 assert(
-  projects.includes('data-source="all-research"'),
-  "Projects page should request the full research catalog."
+  research.includes('data-source="all-research"'),
+  "Research page should request the full research catalog."
 );
 assert(
-  projects.includes('data-render="page-actions"') &&
-    siteData.pages.projects.actions.length === 2 &&
-    JSON.stringify(siteData.pages.projects.actions) ===
+  research.includes('data-render="page-actions"') &&
+    siteData.pages.research.actions.length === 2 &&
+    JSON.stringify(siteData.pages.research.actions) ===
       JSON.stringify([
         { label: "GitHub", href: "https://github.com/raivlab", iconSrc: "assets/icon/github_b.png" },
         { label: "YouTube", href: "https://www.youtube.com/@raivlab", iconSrc: "assets/icon/youtube.png" },
@@ -558,33 +561,34 @@ siteData.projects.forEach((item) => {
   assert(!("tags" in item), `${item.title} should not define keyword tags for cards.`);
 });
 assert(
-  projects.includes("<title>Research | RAIV Lab</title>"),
+  research.includes("<title>Research | RAIV Lab</title>"),
   "The research portfolio page should be titled Research."
 );
 assert(
-  !projects.includes("Research portfolio.") &&
-    !projects.includes("Project cards collect lab research"),
+  !research.includes("Research portfolio.") &&
+    !research.includes("Project cards collect lab research"),
   "Research page should not show the old top portfolio hero."
 );
 assert(
-  projects.includes('data-render="page-title"') &&
-    siteData.pages.projects.title === "Research" &&
-    !projects.includes("<h2>Mission</h2>"),
+  research.includes('data-render="page-title"') &&
+    siteData.pages.research.title === "Research" &&
+    !research.includes("<h2>Mission</h2>"),
   "Research page should render its page title from site.js instead of a hardcoded Mission heading."
 );
 assert(
-  !projects.includes(
+  !research.includes(
     "We aim to pioneer Vision-Based Embodied Intelligence, enabling next-generation robots to seamlessly adapt to complex and dynamic human environments."
   ) &&
-    !projects.includes("Vision-Based Embodied Intelligence. We aim to pioneer vision-based embodied"),
+    !research.includes("Vision-Based Embodied Intelligence. We aim to pioneer vision-based embodied"),
   "Research page should not show the removed mission sentence."
 );
 assert(
-  !projects.includes('<p class="eyebrow">Mission</p>'),
+  !research.includes('<p class="eyebrow">Mission</p>'),
   "Research Mission section should not show the small Mission eyebrow."
 );
 [
-  ["projects.html", "Research"],
+  ["research.html", "Research"],
+  ["projects.html", "Projects"],
   ["people.html", "Current Members"],
   ["publications.html", "Publications"],
   ["album.html", "Gallery"],
@@ -970,6 +974,7 @@ assert(
 
 [
   "index.html",
+  "research.html",
   "projects.html",
   "people.html",
   "publications.html",
@@ -980,8 +985,6 @@ assert(
   "contact.html",
 ].forEach((file) => {
   const html = pages[file];
-  assert(!html.includes('href="research.html"'), `${file} should not link to removed research.html.`);
-  assert(!html.includes('data-nav="research"'), `${file} should not include the old research nav item.`);
   assert(html.includes('data-render="site-header"'), `${file} should render the shared header from site.js.`);
   assert(!html.includes('<nav id="site-nav"'), `${file} should not hardcode the navigation links.`);
   assert(!html.includes('src="assets/logo-symbol.png"'), `${file} should not hardcode the header logo image.`);
@@ -992,13 +995,14 @@ assert.deepStrictEqual(
   [
     ["home", "Home", "index.html"],
     ["people", "People", "people.html"],
-    ["projects", "Research", "projects.html"],
+    ["research", "Research", "research.html"],
+    ["projects", "Projects", "projects.html"],
     ["publications", "Publications", "publications.html"],
     ["album", "Album", "album.html"],
     ["news", "News", "news.html"],
     ["contact", "Contact", "contact.html"],
   ],
-  "Shared nav data should be Home, People, Research, Publications, Album, News, Contact, with Join hidden from nav."
+  "Shared nav data should place Projects between Research and Publications, with Join hidden from nav."
 );
 assert(
   siteData.brand.logoSrc === "assets/logo-symbol.png" &&
@@ -1111,9 +1115,6 @@ assert(
     /@media \(max-width: 680px\) \{[\s\S]*\.album-grid[\s\S]*grid-template-columns: 1fr;/.test(styles),
   "Album grid should collapse to two columns on tablet and one column on mobile."
 );
-assert(
-  !fs.existsSync(path.join(root, "research.html")),
-  "research.html should be removed."
-);
+assert(fs.existsSync(path.join(root, "research.html")), "research.html should contain the research portfolio.");
 
 console.log("site structure checks passed");

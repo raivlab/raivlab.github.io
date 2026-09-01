@@ -1,5 +1,5 @@
-@import url("styles/00-foundation.css");
-@import url("styles/10-home.css");
-@import url("styles/20-components.css");
-@import url("styles/30-pages.css");
-@import url("styles/90-responsive.css");
+@import url("styles/00-foundation.css?v=20260901-projects");
+@import url("styles/10-home.css?v=20260901-projects");
+@import url("styles/20-components.css?v=20260901-projects");
+@import url("styles/30-pages.css?v=20260901-projects");
+@import url("styles/90-responsive.css?v=20260901-projects");

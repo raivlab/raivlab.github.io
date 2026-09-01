@@ -6,7 +6,8 @@ Static GitHub Pages site for Robotics and AI Vision Lab at Kumoh National Instit
 
 - `index.html`
 - `people.html`
-- `projects.html` - shown as the Research page in navigation
+- `research.html` - research cards, papers, code, and video links
+- `projects.html` - funded projects with Korean/English content
 - `publications.html`
 - `album.html`
 - `news.html`
@@ -26,11 +27,14 @@ Editable lab content lives in `data/site.js`:
 - news
 - albums
 - Join page Korean/English copy
+- funded project Korean/English copy and images
 - contact information and map URL
 
 The HTML files provide page structure. The renderer files in `scripts/` read `data/site.js` and fill repeated content into elements marked with `data-render`.
 
-Project cards support `links`, optional `imageSrc`, and optional `youtubeHref` fields. Add a real YouTube URL to `youtubeHref` and the Research page will show an inline player preview plus a YouTube icon link.
+Research cards support `links`, optional `imageSrc`, and optional `youtubeHref` fields. Add a real YouTube URL to `youtubeHref` and the Research page will show an inline player preview plus a YouTube icon link.
+
+Add funded projects to the `fundedProjects` array in `data/site.js`. Each entry accepts `imageSrc`, `imageAlt`, and matching `korean` / `english` objects. Inside each language object, `heading`, `role`, `period`, `fundingSource`, `program`, and `title` are supported; missing optional fields are omitted automatically. Projects are displayed automatically from the earliest start period to the latest, using `YYYY.MM - YYYY.MM` (or `YYYY - YYYY`) values from `period`.
 
 ## Code Structure
 
@@ -42,11 +46,12 @@ Project cards support `links`, optional `imageSrc`, and optional `youtubeHref` f
 - `scripts/render-people.js` - faculty and student cards
 - `scripts/render-publications.js` - publication list and year filters
 - `scripts/render-news.js` - home/news timelines
-- `scripts/render-pages.js` - albums, calendar, recruiting, Join, Contact
+- `scripts/render-pages.js` - funded Projects, albums, calendar, recruiting, Join, Contact
 - `scripts/main.js` - renderer bootstrap and navigation behavior
 - `styles.css` - CSS import manifest
 - `styles/` - split CSS by foundation, home, components, pages, and responsive rules
 - `tests/site-structure.test.js` - structural regression checks for content, renderers, and layout selectors
+- `tests/projects-page.test.js` - funded-project data, page split, language toggle, and optional-field checks
 
 `script.js` remains as a thin compatibility loader for older cached pages. New pages load the split files directly.
 
@@ -93,6 +98,7 @@ node --check scripts\render-news.js
 node --check scripts\render-pages.js
 node --check scripts\main.js
 node --check script.js
+node tests\projects-page.test.js
 node tests\site-structure.test.js
 ```
 

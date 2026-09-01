@@ -20,6 +20,7 @@
     renderRecruiting,
     renderRecruitingDetail,
     renderJoinPage,
+    renderFundedProjects,
     renderContact,
     initProjectVideos,
     initPublicationFilters,
@@ -65,6 +66,7 @@
   renderRecruiting();
   renderRecruitingDetail();
   renderJoinPage();
+  renderFundedProjects();
   renderContact();
   initProjectVideos();
   initPublicationFilters();

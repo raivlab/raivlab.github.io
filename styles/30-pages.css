@@ -640,6 +640,70 @@
   background: #ffffff;
 }
 
+.funded-projects-layout > [data-render="funded-projects"] {
+  display: grid;
+  gap: 28px;
+}
+
+.funded-project-list {
+  display: grid;
+  gap: 28px;
+}
+
+.funded-project-list[hidden] {
+  display: none !important;
+}
+
+.funded-project-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.65fr);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.funded-project-copy {
+  display: grid;
+  align-content: center;
+  gap: 13px;
+  min-width: 0;
+  padding: 30px;
+}
+
+.funded-project-copy h2 {
+  margin-bottom: 7px;
+  color: var(--ink);
+  font-size: 1.35rem;
+  line-height: 1.3;
+}
+
+.funded-project-detail {
+  display: grid;
+  grid-template-columns: 126px minmax(0, 1fr);
+  gap: 18px;
+  color: var(--ink-soft);
+  line-height: 1.5;
+}
+
+.funded-project-detail strong {
+  color: var(--teal-dark);
+  font-size: 0.92rem;
+}
+
+.funded-project-figure {
+  min-height: 300px;
+  margin: 0;
+  background: #ffffff;
+}
+
+.funded-project-figure img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
 .clean-list {
   display: grid;
   gap: 12px;

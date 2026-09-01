@@ -23,7 +23,8 @@ window.raivData = {
   navItems: [
     { key: "home", label: "Home", href: "index.html" },
     { key: "people", label: "People", href: "people.html" },
-    { key: "projects", label: "Research", href: "projects.html" },
+    { key: "research", label: "Research", href: "research.html" },
+    { key: "projects", label: "Projects", href: "projects.html" },
     { key: "publications", label: "Publications", href: "publications.html" },
     { key: "album", label: "Album", href: "album.html" },
     { key: "news", label: "News", href: "news.html" },
@@ -50,7 +51,7 @@ window.raivData = {
         latestResearch: {
           title: "Latest Research",
           linkLabel: "All research",
-          href: "projects.html",
+          href: "research.html",
         },
         latestNews: {
           title: "Latest News",
@@ -59,13 +60,14 @@ window.raivData = {
         },
       },
     },
-    projects: {
+    research: {
       title: "Research",
       actions: [
         { label: "GitHub", href: "https://github.com/raivlab", iconSrc: "assets/icon/github_b.png" },
         { label: "YouTube", href: "https://www.youtube.com/@raivlab", iconSrc: "assets/icon/youtube.png" },
       ],
     },
+    projects: { title: "Projects" },
     people: { title: "Current Members" },
     publications: { title: "Publications" },
     album: { title: "Gallery" },
@@ -185,6 +187,125 @@ window.raivData = {
     {
       label: "Email",
       href: "mailto:mhjeon@kumoh.ac.kr",
+    },
+  ],
+  fundedProjects: [
+    {
+      imageSrc: "assets/사진/프로젝트사진/기본연구.png",
+      imageAlt: {
+        korean: "능동적 시각-촉각 융합 기반 도구 조작 연구 개념도",
+        english: "Core Research Program visual",
+      },
+      korean: {
+        heading: "핵심연구(기본연구B)",
+        role: "연구책임자",
+        period: "2026.09 - 2031.08",
+        fundingSource: "과학기술정보통신부",
+        program: "개인기초연구사업",
+        title: "불확실성을 고려한 능동적 시각-촉각 융합 기반 미지 도구 조작 지능 개발",
+      },
+      english: {
+        heading: "Core Research Program (Basic Research Program B)",
+        role: "PI",
+        period: "2026.09 - 2031.08",
+        fundingSource: "Ministry of Science and ICT",
+        program: "Individual Basic Research Program",
+        title: "Tool Manipulation Intelligence via Uncertainty-Aware Active Visual-Tactile Fusion",
+      },
+    },
+    {
+      imageSrc: "assets/사진/프로젝트사진/RFM.jpg",
+      imageAlt: {
+        korean: "공간지능 로봇 파운데이션 모델 연구 개념도",
+        english: "Spatial intelligence Robot Foundation Model project visual",
+      },
+      korean: {
+        heading: "로봇산업기술개발사업",
+        role: "공동연구책임자",
+        period: "2026.07 - 2029.12",
+        fundingSource: "산업통상부",
+        program: "로봇산업핵심기술개발",
+        title:
+          "휴머노이드 및 사족보행 로봇의 비정형 공간주행을 위한 VLM 기반 공간지능 Robot Foundation Model(RFM) 개발",
+      },
+      english: {
+        heading: "Robot Industry Technology Development Program",
+        role: "Co-PI",
+        period: "2026.07 - 2029.12",
+        fundingSource: "Ministry of Trade, Industry and Resources",
+        program: "Core Robot Industry Technology Development",
+        title:
+          "Spatial-RFM: Development of a VLM-based Spatial Intelligence Robot Foundation Model for Humanoid and Quadruped Robot Navigation in Unstructured Environments",
+      },
+    },
+    {
+      imageSrc: "assets/사진/프로젝트사진/배터리.jpg",
+      imageAlt: {
+        korean: "휴머노이드 고효율 핫스왑 배터리 시스템 연구 개념도",
+        english: "Humanoid hot-swap battery system project visual",
+      },
+      korean: {
+        heading: "로봇산업기술개발사업",
+        role: "공동연구책임자",
+        period: "2026.07 - 2029.12",
+        fundingSource: "산업통상부",
+        program: "로봇산업핵심기술개발",
+        title:
+          "장기간 무정지 휴머노이드 운용을 위한 바이모달 Cell-to-Pack 및 Physical AI 융합 지능형 BMS 기반 고효율 핫스왑 시스템 개발",
+      },
+      english: {
+        heading: "Robot Industry Technology Development Program",
+        role: "Co-PI",
+        period: "2026.07 - 2029.12",
+        fundingSource: "Ministry of Trade, Industry and Resources",
+        program: "Core Robot Industry Technology Development",
+        title:
+          "Development of a High-Efficiency Hot-Swap Battery System Based on Bimodal Cell-to-Pack and Physical AI-Integrated Intelligent BMS for Long-Term Non-Stop Operation of Humanoids",
+      },
+    },
+    {
+      imageSrc: "assets/사진/프로젝트사진/금오공대.png",
+      imageAlt: {
+        korean: "국립금오공과대학교 캠퍼스 전경",
+        english: "Kumoh National Institute of Technology campus",
+      },
+      korean: {
+        heading: "인공지능혁신인재양성사업 (AX대학원)",
+        role: "참여",
+        period: "2026.09 - 2032.08",
+        fundingSource: "과학기술정보통신부",
+      },
+      english: {
+        heading: "AI Innovation Human Resource Development Program (AX Graduate School)",
+        role: "Participant",
+        period: "2026.09 - 2032.08",
+        fundingSource: "Ministry of Science and ICT",
+      },
+    },
+    {
+      imageSrc: "assets/사진/프로젝트사진/kit-rise.png",
+      imageAlt: {
+        korean: "KIT-RISE 산학연 공동기술 개발과제 이미지",
+        english: "KIT-RISE collaborative technology development project visual",
+      },
+      korean: {
+        heading: "산학연 공동기술 개발",
+        role: "연구책임자",
+        period: "2026.04 - 2026.12",
+        fundingSource: "국립금오공과대학교 RISE사업단",
+        program: "제조산업 AX전환 선도기술 개발",
+        title:
+          "플라스틱 사출물 제조공정의 지능형 품질 관리 AX 전환을 위한 AI 비전 기반 결함 검출 및 치수검사 시스템 개발",
+      },
+      english: {
+        heading: " Industry-University Research Collaborative Project",
+        role: "PI",
+        period: "2026.04 - 2026.12",
+        fundingSource: "KIT-RISE",
+        program: "Development of pioneering AI transformation (AX) technologies for manufacturing",
+        title:
+          "AI Vision-Based Defect Detection and Dimensional Inspection System for Intelligent Quality Management in Plastic Injection Molding Processes",
+      },
     },
   ],
   projects: [
@@ -646,12 +767,12 @@ window.raivData = {
         {
           date: "Aug 2026",
           sortDate: "2026-08",
-          title: "RAIV Lab won a big grant @KEIT-Robot Industry Technology Development Program (Robot Foundation Model)",
+          title: "RAIV Lab won a big grant @MOTIR-Robot Industry Technology Development Program (Robot Foundation Model)",
         },
         {
           date: "Aug 2026",
           sortDate: "2026-08",
-          title: "RAIV Lab won a big grant @KEIT-Robot Industry Technology Development Program (Hot-Swap Batteries for Humanoid)",
+          title: "RAIV Lab won a big grant @MOTIR-Robot Industry Technology Development Program (Hot-Swap Batteries for Humanoid)",
         },
         {
           date: "May 2026",

@@ -259,6 +259,117 @@
     });
   };
 
+  const projectFieldLabels = {
+    ko: {
+      role: "역할",
+      period: "기간",
+      fundingSource: "지원기관",
+      program: "프로그램",
+      title: "과제명",
+    },
+    en: {
+      role: "Role",
+      period: "Period",
+      fundingSource: "Funding Source",
+      program: "Program",
+      title: "Title",
+    },
+  };
+
+  const renderFundedProjectCard = (project, language) => {
+    const contentKey = language === "ko" ? "korean" : "english";
+    const content = project[contentKey];
+    const labels = projectFieldLabels[language];
+    const card = make("article", "funded-project-card");
+    const copy = make("div", "funded-project-copy");
+    copy.append(make("h2", null, content.heading));
+
+    ["role", "period", "fundingSource", "program", "title"].forEach((field) => {
+      if (!content[field]) return;
+      const row = make("div", "funded-project-detail");
+      row.append(make("strong", null, labels[field]), make("span", null, content[field]));
+      copy.append(row);
+    });
+
+    const figure = make("figure", "funded-project-figure");
+    const image = make("img");
+    image.src = project.imageSrc;
+    image.alt =
+      (typeof project.imageAlt === "object" ? project.imageAlt?.[contentKey] : project.imageAlt) || content.heading;
+    image.loading = "lazy";
+    image.decoding = "async";
+    figure.append(image);
+    card.append(copy, figure);
+    return card;
+  };
+
+  const fundedProjectStart = (project) => {
+    const period = project.korean?.period || project.english?.period || "";
+    const match = String(period).match(/(\d{4})(?:\.(\d{1,2}))?/);
+    if (!match) return Number.POSITIVE_INFINITY;
+    return Number(match[1]) * 12 + Number(match[2] || 1);
+  };
+
+  const sortedFundedProjects = () =>
+    (data.fundedProjects || [])
+      .map((project, index) => ({ project, index, start: fundedProjectStart(project) }))
+      .sort((a, b) => a.start - b.start || a.index - b.index)
+      .map(({ project }) => project);
+
+  const renderFundedProjectPanel = (language) => {
+    const panel = make("div", "funded-project-list");
+    panel.dataset.projectLanguagePanel = language;
+    panel.lang = language;
+    sortedFundedProjects().forEach((project) => {
+      const content = language === "ko" ? project.korean : project.english;
+      if (content) panel.append(renderFundedProjectCard(project, language));
+    });
+    return panel;
+  };
+
+  const renderProjectLanguageToggle = () => {
+    const toggle = make("div", "join-language-toggle project-language-toggle");
+    toggle.setAttribute("role", "group");
+    toggle.setAttribute("aria-label", "Projects page language");
+
+    [
+      ["ko", "KOR"],
+      ["en", "ENG"],
+    ].forEach(([language, label]) => {
+      const button = make("button", null, label);
+      button.type = "button";
+      button.dataset.projectLanguage = language;
+      toggle.append(button);
+    });
+
+    return toggle;
+  };
+
+  const setProjectLanguage = (target, language) => {
+    target.dataset.activeLanguage = language;
+    target.querySelectorAll("[data-project-language]").forEach((button) => {
+      const active = button.dataset.projectLanguage === language;
+      button.classList.toggle("active", active);
+      button.setAttribute("aria-pressed", String(active));
+    });
+    target.querySelectorAll("[data-project-language-panel]").forEach((panel) => {
+      panel.hidden = panel.dataset.projectLanguagePanel !== language;
+    });
+  };
+
+  const renderFundedProjects = () => {
+    renderEach('[data-render="funded-projects"]', (target) => {
+      const toggle = renderProjectLanguageToggle();
+      target.replaceChildren(toggle, renderFundedProjectPanel("ko"), renderFundedProjectPanel("en"));
+      toggle.addEventListener("click", (event) => {
+        const button = event.target.closest("[data-project-language]");
+        if (!button) return;
+        setProjectLanguage(target, button.dataset.projectLanguage);
+      });
+      setProjectLanguage(target, "ko");
+    });
+  };
+
   const renderContact = () => {
     renderEach('[data-render="contact"]', (target) => {
       const contact = data.contactPage || data.contact;
@@ -312,6 +423,13 @@
     renderJoinLanguageToggle,
     setJoinLanguage,
     renderJoinPage,
+    renderFundedProjectCard,
+    fundedProjectStart,
+    sortedFundedProjects,
+    renderFundedProjectPanel,
+    renderProjectLanguageToggle,
+    setProjectLanguage,
+    renderFundedProjects,
     renderContact,
   });
 })();
