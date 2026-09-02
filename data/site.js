@@ -318,7 +318,7 @@ window.raivData = {
         role: "참여",
         period: "2026.09 - 2031.02",
         fundingSource: "교육부",
-      },
+      }, 
       english: {
         heading: "Defense AI Talent Development Bootcamp Program",
         role: "Participant",
