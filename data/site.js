@@ -197,7 +197,7 @@ window.raivData = {
         english: "Core Research Program visual",
       },
       korean: {
-        heading: "핵심연구 (기본연구B)",
+        heading: "핵심연구(기본연구B)",
         role: "연구책임자",
         period: "2026.09 - 2031.08",
         fundingSource: "과학기술정보통신부",
@@ -295,7 +295,7 @@ window.raivData = {
         english: "Kumoh National Institute of Technology campus",
       },
       korean: {
-        heading: "인공지능혁신인재양성사업 (AX대학원)",
+        heading: "인공지능혁신인재양성사업(AX대학원)",
         role: "참여",
         period: "2026.09 - 2032.08",
         fundingSource: "과학기술정보통신부",
