@@ -264,6 +264,31 @@ window.raivData = {
       },
     },
     {
+      imageSrc: "assets/사진/프로젝트사진/kit-rise.png",
+      imageAlt: {
+        korean: "KIT-RISE 산학연 공동기술 개발과제 이미지",
+        english: "KIT-RISE collaborative technology development project visual",
+      },
+      korean: {
+        heading: "산학연 공동기술 개발",
+        role: "연구책임자",
+        period: "2026.04 - 2026.12",
+        fundingSource: "국립금오공과대학교 RISE사업단",
+        program: "제조산업 AX전환 선도기술 개발",
+        title:
+          "플라스틱 사출물 제조공정의 지능형 품질 관리 AX 전환을 위한 AI 비전 기반 결함 검출 및 치수검사 시스템 개발",
+      },
+      english: {
+        heading: "Industry-University Research Collaborative Project",
+        role: "PI",
+        period: "2026.04 - 2026.12",
+        fundingSource: "KIT-RISE",
+        program: "Development of pioneering AI transformation (AX) technologies for manufacturing",
+        title:
+          "AI Vision-Based Defect Detection and Dimensional Inspection System for Intelligent Quality Management in Plastic Injection Molding Processes",
+      },
+    },
+   {
       imageSrc: "assets/사진/프로젝트사진/금오공대.png",
       imageAlt: {
         korean: "국립금오공과대학교 캠퍼스 전경",
@@ -281,32 +306,26 @@ window.raivData = {
         period: "2026.09 - 2032.08",
         fundingSource: "Ministry of Science and ICT",
       },
-    },
+    },    
     {
-      imageSrc: "assets/사진/프로젝트사진/kit-rise.png",
+      imageSrc: "assets/사진/프로젝트사진/부트캠프.jpg",
       imageAlt: {
-        korean: "KIT-RISE 산학연 공동기술 개발과제 이미지",
-        english: "KIT-RISE collaborative technology development project visual",
+        korean: "부트캠프 이미지",
+        english: "Defense AI Bootcamp",
       },
       korean: {
-        heading: "산학연 공동기술 개발",
-        role: "연구책임자",
-        period: "2026.04 - 2026.12",
-        fundingSource: "국립금오공과대학교 RISE사업단",
-        program: "제조산업 AX전환 선도기술 개발",
-        title:
-          "플라스틱 사출물 제조공정의 지능형 품질 관리 AX 전환을 위한 AI 비전 기반 결함 검출 및 치수검사 시스템 개발",
+        heading: "방산 AI 인재양성 부트캠프",
+        role: "참여",
+        period: "2026.09 - 2031.02",
+        fundingSource: "교육부",
       },
       english: {
-        heading: " Industry-University Research Collaborative Project",
-        role: "PI",
-        period: "2026.04 - 2026.12",
-        fundingSource: "KIT-RISE",
-        program: "Development of pioneering AI transformation (AX) technologies for manufacturing",
-        title:
-          "AI Vision-Based Defect Detection and Dimensional Inspection System for Intelligent Quality Management in Plastic Injection Molding Processes",
+        heading: "Defense AI Talent Development Bootcamp Program",
+        role: "Participant",
+        period: "2026.09 - 2031.02",
+        fundingSource: "Ministry of Education",
       },
-    },
+    },    
   ],
   projects: [
     {
