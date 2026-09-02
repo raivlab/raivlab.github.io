@@ -197,7 +197,7 @@ window.raivData = {
         english: "Core Research Program visual",
       },
       korean: {
-        heading: "핵심연구(기본연구B)",
+        heading: "핵심연구 (기본연구B)",
         role: "연구책임자",
         period: "2026.09 - 2031.08",
         fundingSource: "과학기술정보통신부",
