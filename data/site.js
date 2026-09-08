@@ -213,56 +213,56 @@ window.raivData = {
         title: "Tool Manipulation Intelligence via Uncertainty-Aware Active Visual-Tactile Fusion",
       },
     },
-    {
-      imageSrc: "assets/사진/프로젝트사진/RFM.jpg",
-      imageAlt: {
-        korean: "공간지능 로봇 파운데이션 모델 연구 개념도",
-        english: "Spatial intelligence Robot Foundation Model project visual",
-      },
-      korean: {
-        heading: "로봇산업기술개발사업",
-        role: "공동연구책임자",
-        period: "2026.07 - 2029.12",
-        fundingSource: "산업통상부",
-        program: "로봇산업핵심기술개발",
-        title:
-          "휴머노이드 및 사족보행 로봇의 비정형 공간주행을 위한 VLM 기반 공간지능 Robot Foundation Model(RFM) 개발",
-      },
-      english: {
-        heading: "Robot Industry Technology Development Program",
-        role: "Co-PI",
-        period: "2026.07 - 2029.12",
-        fundingSource: "Ministry of Trade, Industry and Resources",
-        program: "Core Robot Industry Technology Development",
-        title:
-          "Spatial-RFM: Development of a VLM-based Spatial Intelligence Robot Foundation Model for Humanoid and Quadruped Robot Navigation in Unstructured Environments",
-      },
-    },
-    {
-      imageSrc: "assets/사진/프로젝트사진/배터리.jpg",
-      imageAlt: {
-        korean: "휴머노이드 고효율 핫스왑 배터리 시스템 연구 개념도",
-        english: "Humanoid hot-swap battery system project visual",
-      },
-      korean: {
-        heading: "로봇산업기술개발사업",
-        role: "공동연구책임자",
-        period: "2026.07 - 2029.12",
-        fundingSource: "산업통상부",
-        program: "로봇산업핵심기술개발",
-        title:
-          "장기간 무정지 휴머노이드 운용을 위한 바이모달 Cell-to-Pack 및 Physical AI 융합 지능형 BMS 기반 고효율 핫스왑 시스템 개발",
-      },
-      english: {
-        heading: "Robot Industry Technology Development Program",
-        role: "Co-PI",
-        period: "2026.07 - 2029.12",
-        fundingSource: "Ministry of Trade, Industry and Resources",
-        program: "Core Robot Industry Technology Development",
-        title:
-          "Development of a High-Efficiency Hot-Swap Battery System Based on Bimodal Cell-to-Pack and Physical AI-Integrated Intelligent BMS for Long-Term Non-Stop Operation of Humanoids",
-      },
-    },
+    // {
+    //   imageSrc: "assets/사진/프로젝트사진/RFM.jpg",
+    //   imageAlt: {
+    //     korean: "공간지능 로봇 파운데이션 모델 연구 개념도",
+    //     english: "Spatial intelligence Robot Foundation Model project visual",
+    //   },
+    //   korean: {
+    //     heading: "로봇산업기술개발사업",
+    //     role: "공동연구책임자",
+    //     period: "2026.07 - 2029.12",
+    //     fundingSource: "산업통상부",
+    //     program: "로봇산업핵심기술개발",
+    //     title:
+    //       "휴머노이드 및 사족보행 로봇의 비정형 공간주행을 위한 VLM 기반 공간지능 Robot Foundation Model(RFM) 개발",
+    //   },
+    //   english: {
+    //     heading: "Robot Industry Technology Development Program",
+    //     role: "Co-PI",
+    //     period: "2026.07 - 2029.12",
+    //     fundingSource: "Ministry of Trade, Industry and Resources",
+    //     program: "Core Robot Industry Technology Development",
+    //     title:
+    //       "Spatial-RFM: Development of a VLM-based Spatial Intelligence Robot Foundation Model for Humanoid and Quadruped Robot Navigation in Unstructured Environments",
+    //   },
+    // },
+    // {
+    //   imageSrc: "assets/사진/프로젝트사진/배터리.jpg",
+    //   imageAlt: {
+    //     korean: "휴머노이드 고효율 핫스왑 배터리 시스템 연구 개념도",
+    //     english: "Humanoid hot-swap battery system project visual",
+    //   },
+    //   korean: {
+    //     heading: "로봇산업기술개발사업",
+    //     role: "공동연구책임자",
+    //     period: "2026.07 - 2029.12",
+    //     fundingSource: "산업통상부",
+    //     program: "로봇산업핵심기술개발",
+    //     title:
+    //       "장기간 무정지 휴머노이드 운용을 위한 바이모달 Cell-to-Pack 및 Physical AI 융합 지능형 BMS 기반 고효율 핫스왑 시스템 개발",
+    //   },
+    //   english: {
+    //     heading: "Robot Industry Technology Development Program",
+    //     role: "Co-PI",
+    //     period: "2026.07 - 2029.12",
+    //     fundingSource: "Ministry of Trade, Industry and Resources",
+    //     program: "Core Robot Industry Technology Development",
+    //     title:
+    //       "Development of a High-Efficiency Hot-Swap Battery System Based on Bimodal Cell-to-Pack and Physical AI-Integrated Intelligent BMS for Long-Term Non-Stop Operation of Humanoids",
+    //   },
+    // },
     {
       imageSrc: "assets/사진/프로젝트사진/kit-rise.png",
       imageAlt: {
@@ -783,16 +783,16 @@ window.raivData = {
           sortDate: "2026-08",
           title: "RAIV Lab won a big grant @MSIT-Core Research Grants (General Research B)",
         },
-        {
-          date: "Aug 2026",
-          sortDate: "2026-08",
-          title: "RAIV Lab won a big grant @MOTIR-Robot Industry Technology Development Program (Robot Foundation Model)",
-        },
-        {
-          date: "Aug 2026",
-          sortDate: "2026-08",
-          title: "RAIV Lab won a big grant @MOTIR-Robot Industry Technology Development Program (Hot-Swap Batteries for Humanoid)",
-        },
+        // {
+        //   date: "Aug 2026",
+        //   sortDate: "2026-08",
+        //   title: "RAIV Lab won a big grant @MOTIR-Robot Industry Technology Development Program (Robot Foundation Model)",
+        // },
+        // {
+        //   date: "Aug 2026",
+        //   sortDate: "2026-08",
+        //   title: "RAIV Lab won a big grant @MOTIR-Robot Industry Technology Development Program (Hot-Swap Batteries for Humanoid)",
+        // },
         {
           date: "May 2026",
           sortDate: "2026-05",
