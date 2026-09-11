@@ -116,6 +116,12 @@ window.raivData = {
   },
   albums: [
     {
+      title: "국립금오공대 대학 인재상(KIT 인재상) 수상",
+      date: "2026.09.09",
+      imageSrc: "assets/사진/앨범/수상/이경문_KIT인재.jpg",
+      imageAlt: "국립금오공대 대학 인재상(KIT 인재상) 수상",
+    },        
+    {
       title: "제 2회 RAIV-RML 연구 교류 워크샵",
       date: "2026.08.27",
       imageSrc: "assets/사진/앨범/joint_workshop_2/초청세미나1.jpg",
@@ -808,6 +814,11 @@ window.raivData = {
         {
       title: "Award",
       items: [
+        {
+          date: "Sep 2026",
+          sortDate: "2026-09",
+          title: "우리 연구실의 이경문 학생이 국립금오공과대학교 대학 인재상(KIT 인재상)을 수상하였습니다. 축하합니다!",
+        },        
         {
           date: "Aug 2026",
           sortDate: "2026-08",
