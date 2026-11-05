@@ -832,7 +832,7 @@ window.raivData = {
         {
           date: "Oct 2026",
           sortDate: "2026-10",
-          title: "Prof. Jeon received the Outstanding Young Researcher Award from the Institute of Control, Robotics and Systems (ICROS).",
+          title: "Prof. Jeon received the Outstanding Young Researcher Award from the Institute of Control, Robotics and Systems (ICROS)",
         },             
         {
           date: "Sep 2026",
