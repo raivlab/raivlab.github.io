@@ -632,14 +632,7 @@ window.raivData = {
       email: "20210772@kumoh.ac.kr",
       imageSrc: "assets/사진/멤버별사진/이경문.jpg",
       imageAlt: "Portrait of Gyeongmun Lee",
-    },
-    {
-      name: "Jisung Lee",
-      role: "Undergraduate Student",
-      email: "waydt@kumoh.ac.kr",
-      imageSrc: "assets/사진/멤버별사진/이지성.jpg",
-      imageAlt: "Portrait of Jisung Lee",
-    },    
+    }, 
   ],
   publications: [
     {
@@ -855,13 +848,7 @@ window.raivData = {
     },
     {
       title: "New Members",
-      items: [
-        {
-          date: "Jul 2026",
-          sortDate: "2026-07",
-          title: "Jisung Lee joined @RAIV Lab",
-          names: ["Jisung Lee"],
-        },        
+      items: [  
         {
           date: "Jun 2026",
           sortDate: "2026-06",
