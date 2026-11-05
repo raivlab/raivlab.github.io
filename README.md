@@ -36,6 +36,8 @@ Research cards support `links`, optional `imageSrc`, and optional `youtubeHref` 
 
 Add funded projects to the `fundedProjects` array in `data/site.js`. Each entry accepts `imageSrc`, `imageAlt`, and matching `korean` / `english` objects. Inside each language object, `heading`, `role`, `period`, `fundingSource`, `program`, and `title` are supported; missing optional fields are omitted automatically. Projects are displayed automatically from the earliest start period to the latest, using `YYYY.MM - YYYY.MM` (or `YYYY - YYYY`) values from `period`.
 
+To add news articles to a funded project, add their URLs to its optional `newsLinks` array. Each URL displays a separate News icon in both languages; the icons wrap onto another line when needed.
+
 ## Code Structure
 
 - `data/site.js` - single source of editable site content

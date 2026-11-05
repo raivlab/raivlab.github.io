@@ -239,6 +239,10 @@ window.raivData = {
     },
     {
       imageSrc: "assets/사진/프로젝트사진/RFM.jpg",
+      newsLinks: [
+        "https://n.news.naver.com/article/011/0004678538?sid=101",
+        "https://www.newsprime.co.kr/news/article/?no=753588",
+      ],
       imageAlt: {
         korean: "공간지능 로봇 파운데이션 모델 연구 개념도",
         english: "Spatial intelligence Robot Foundation Model project visual",

@@ -137,7 +137,13 @@ const rendererContext = {
       renderEach(selector, callback) {
         if (selector === '[data-render="funded-projects"]') callback(projectTarget);
       },
-      link() {},
+      link(label, href, className) {
+        const anchor = document.createElement("a");
+        anchor.className = className;
+        anchor.textContent = label;
+        anchor.href = href;
+        return anchor;
+      },
     },
   },
 };

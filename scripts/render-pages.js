@@ -291,6 +291,25 @@
       copy.append(row);
     });
 
+    if (project.newsLinks?.length) {
+      const newsLinks = make("div", "inline-links");
+      project.newsLinks.forEach((href, index) => {
+        const label = language === "ko"
+          ? `관련 뉴스 ${index + 1} (새 탭에서 열림)`
+          : `News ${index + 1} (opens in a new tab)`;
+        const newsLink = link("", href, "project-link-icon");
+        newsLink.setAttribute("aria-label", label);
+        newsLink.title = "News";
+        const icon = make("img");
+        icon.src = "assets/icon/news_b.png";
+        icon.alt = "";
+        icon.setAttribute("aria-hidden", "true");
+        newsLink.append(icon);
+        newsLinks.append(newsLink);
+      });
+      copy.append(newsLinks);
+    }
+
     const figure = make("figure", "funded-project-figure");
     const image = make("img");
     image.src = project.imageSrc;
