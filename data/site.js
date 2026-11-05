@@ -116,6 +116,24 @@ window.raivData = {
   },
   albums: [
     {
+      title: "IEEE International Symposium on Safety, Security, and Rescue Robotics (SSRR)",
+      date: "2026.11.02-2026.11.04",
+      imageSrc: "assets/사진/앨범/ssrr2026/1.jpg",
+      imageAlt: "IEEE International Symposium on Safety, Security, and Rescue Robotics (SSRR)",
+    },      
+    {
+      title: "제어로봇시스템학회 우수신진연구자상 수상",
+      date: "2026.10.30",
+      imageSrc: "assets/사진/앨범/iccas2026/1.jpg",
+      imageAlt: "제어로봇시스템학회 우수신진연구자상 수상",
+      images: [
+        { src: "assets/사진/앨범/iccas2026/1.jpg" },
+        { src: "assets/사진/앨범/iccas2026/4.jpg" },
+        { src: "assets/사진/앨범/iccas2026/2.jpg" },
+        { src: "assets/사진/앨범/iccas2026/3.jpg" },        
+      ],
+    },    
+    {
       title: "국립금오공과대학교 인재상(KIT 인재상) 수상",
       date: "2026.09.09",
       imageSrc: "assets/사진/앨범/수상/이경문_KIT인재.jpg",
@@ -814,6 +832,11 @@ window.raivData = {
         {
       title: "Award",
       items: [
+        {
+          date: "Oct 2026",
+          sortDate: "2026-10",
+          title: "Prof. Jeon received the Outstanding Young Researcher Award from the Institute of Control, Robotics and Systems (ICROS).",
+        },             
         {
           date: "Sep 2026",
           sortDate: "2026-09",
