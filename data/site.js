@@ -613,6 +613,13 @@ window.raivData = {
       imageAlt: "Portrait of Chanhyo Kim",
     },
     {
+      name: "Gyeongmun Lee",
+      role: "Undergraduate Student",
+      email: "20210772@kumoh.ac.kr",
+      imageSrc: "assets/사진/멤버별사진/이경문.jpg",
+      imageAlt: "Portrait of Gyeongmun Lee",
+    }, 
+    {
       name: "Eui-Jin Oh",
       role: "Undergraduate Student",
       email: "dhdmlwls07@kumoh.ac.kr",
@@ -626,13 +633,6 @@ window.raivData = {
       imageSrc: "assets/사진/멤버별사진/박정욱.jpg",
       imageAlt: "Portrait of Jeongwook Park",
     },
-    {
-      name: "Gyeongmun Lee",
-      role: "Undergraduate Student",
-      email: "20210772@kumoh.ac.kr",
-      imageSrc: "assets/사진/멤버별사진/이경문.jpg",
-      imageAlt: "Portrait of Gyeongmun Lee",
-    }, 
   ],
   publications: [
     {
