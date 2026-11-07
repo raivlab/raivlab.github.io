@@ -874,12 +874,6 @@ window.raivData = {
           names: ["Eui-Jin Oh"],
         },
         {
-          date: "Oct 2025",
-          sortDate: "2025-10",
-          title: "Jae-Min Park joined @RAIV Lab → currently serving in the military",
-          names: ["Jae-Min Park"],
-        },
-        {
           date: "Sep 2025",
           sortDate: "2025-09",
           title: "Chan-Hyeok Park joined @RAIV Lab",
