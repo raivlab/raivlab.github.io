@@ -242,6 +242,7 @@ window.raivData = {
       newsLinks: [
         "https://n.news.naver.com/article/011/0004678538?sid=101",
         "https://www.newsprime.co.kr/news/article/?no=753588",
+        "https://www.kumoh.ac.kr/ko/sub01_05_01.do?mode=view&articleNo=581946",
       ],
       imageAlt: {
         korean: "공간지능 로봇 파운데이션 모델 연구 개념도",
@@ -250,7 +251,7 @@ window.raivData = {
       korean: {
         heading: "로봇산업기술개발사업",
         role: "공동연구책임자",
-        period: "2026.07 - 2029.12",
+        period: "2026.08 - 2029.12",
         fundingSource: "산업통상부",
         program: "로봇산업핵심기술개발",
         title:
@@ -259,7 +260,7 @@ window.raivData = {
       english: {
         heading: "Robot Industry Technology Development Program",
         role: "Co-PI",
-        period: "2026.07 - 2029.12",
+        period: "2026.08 - 2029.12",
         fundingSource: "Ministry of Trade, Industry and Resources",
         program: "Core Robot Industry Technology Development",
         title:
@@ -268,6 +269,9 @@ window.raivData = {
     },
     {
       imageSrc: "assets/사진/프로젝트사진/배터리.jpg",
+      newsLinks: [
+        "https://www.kumoh.ac.kr/ko/sub01_05_01.do?mode=view&articleNo=581946",
+      ],
       imageAlt: {
         korean: "휴머노이드 고효율 핫스왑 배터리 시스템 연구 개념도",
         english: "Humanoid hot-swap battery system project visual",
@@ -275,7 +279,7 @@ window.raivData = {
       korean: {
         heading: "로봇산업기술개발사업",
         role: "공동연구책임자",
-        period: "2026.07 - 2029.12",
+        period: "2026.08 - 2029.12",
         fundingSource: "산업통상부",
         program: "로봇산업핵심기술개발",
         title:
@@ -284,7 +288,7 @@ window.raivData = {
       english: {
         heading: "Robot Industry Technology Development Program",
         role: "Co-PI",
-        period: "2026.07 - 2029.12",
+        period: "2026.08 - 2029.12",
         fundingSource: "Ministry of Trade, Industry and Resources",
         program: "Core Robot Industry Technology Development",
         title:
